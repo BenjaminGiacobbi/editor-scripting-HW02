@@ -1,1 +1,1 @@
-ATCM 4368 - HW02
+A test of tools development for Unity, based on a Brackeys tutorial
