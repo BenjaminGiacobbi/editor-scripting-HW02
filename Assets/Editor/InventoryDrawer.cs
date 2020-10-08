@@ -7,7 +7,7 @@ public class InventoryDrawer : PropertyDrawer
     public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
     {
         // opens property
-        EditorGUI.BeginProperty(position, label, property);
+        label = EditorGUI.BeginProperty(position, label, property);
 
         // draw label
         position = EditorGUI.PrefixLabel(position, GUIUtility.GetControlID(FocusType.Passive), label);
