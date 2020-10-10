@@ -20,17 +20,18 @@ public enum Slot { Helmet, Chest, Gauntlet, Greaves, Boots }
 public class Inventory : MonoBehaviour
 {
     public Equipment[] currentlyEquipped;
-    
 
-    // returns a JSON array of the current equipment
+    // returns a json representation of the current equipment array
     private string ConvertToJson()
     {
+        // informs designer about the conditions of save usage
         if(currentlyEquipped.Length < 1)
         {
             Debug.Log("Equipment Array is empty. Cannot save without equipment data");
             return "";
         }
 
+        // constructs the json form of the inventory data
         string fullJsonString = null;
         for(int item = 0; item < currentlyEquipped.Length; item++)
         {
@@ -38,12 +39,12 @@ public class Inventory : MonoBehaviour
             if (item != currentlyEquipped.Length - 1)
                 fullJsonString += ",";
         }
-        fullJsonString = "{\"Equipment\":[" + fullJsonString + "]}";
 
+        // returns
         return fullJsonString;
     }
 
-    // saves current equipment to a file specified by path
+    // retrieves Json form of inventory data and saves it to a file of specified path
     public void SaveToFile(string path)
     {
         StreamWriter streamWriter = new StreamWriter(path);
@@ -55,7 +56,7 @@ public class Inventory : MonoBehaviour
     {
         StreamReader reader = new StreamReader(path);
         string jsonContents = reader.ReadToEnd();
-        // fill the currentlyEquipped array with the json contents using JsonHelper, for some reason it keeps returning NULL
+        currentlyEquipped = JsonHelper.GetJsonArray<Equipment>(jsonContents);
         reader.Close();
     }
 }

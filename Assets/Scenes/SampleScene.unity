@@ -149,7 +149,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45130bc1fdc4ac745a92dc50d52ee0a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CurrentlyEquipped: []
+  currentlyEquipped:
+  - itemName: Helmet of Helmet
+    statValue: 5
+    itemRarity: 0
+    itemSlot: 0
+  - itemName: Boots of Boot
+    statValue: 2
+    itemRarity: 1
+    itemSlot: 1
+  - itemName: The Leg of Zeg
+    statValue: 12
+    itemRarity: 2
+    itemSlot: 2
+  - itemName: Chestplate of Cool Chestplate
+    statValue: 14
+    itemRarity: 3
+    itemSlot: 3
+  - itemName: test5
+    statValue: 50
+    itemRarity: 4
+    itemSlot: 4
+  - itemName: test6
+    statValue: 300
+    itemRarity: 1
+    itemSlot: 1
 --- !u!4 &467814623
 Transform:
   m_ObjectHideFlags: 0
