@@ -11,7 +11,9 @@ public class InventoryEditor : Editor
 
         Inventory inventory = (Inventory)target;
 
-        EditorGUILayout.HelpBox("These Two Buttons blah blah blah.", MessageType.Info);
+        GUILayout.Space(50);
+
+        EditorGUILayout.HelpBox("Save or load JSON representations of the inventory script for external editing", MessageType.Info);
         GUILayout.BeginHorizontal();
             if (GUILayout.Button("Save Inventory"))
             {
